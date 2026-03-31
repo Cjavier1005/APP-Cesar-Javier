@@ -1,0 +1,32 @@
+/* === GLOBAL === */
+body{margin:0;padding:0;background:#081226;font-family:Arial, sans-serif;color:#E2E9F5}
+/* === HEADER === */
+.app-header{background:#0D1A36;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;color:#DDE7F8}
+.app-header h1{margin:0;font-size:26px;font-weight:bold}
+.actions .danger{background:#E84C4C;color:#fff;padding:10px 25px;border:none;border-radius:12px;cursor:pointer;font-size:14px}
+/* === TABS === */
+.tabs{background:#0D1A36;padding:10px 40px;display:flex;gap:8px}
+.tabs button{background:#1B2C4C;color:#E5EDFA;padding:8px 18px;border:1px solid #2C3E63;border-radius:8px;cursor:pointer;font-size:14px}
+.tabs button.active{background:#5696FF;border-color:#5696FF;color:#fff}
+/* === MAIN === */
+main{padding:30px 40px}
+.tab{display:none}
+.tab.active{display:block}
+h2{margin-top:0}
+/* === CARDS === */
+.card{background:#0F1F3F;border:1px solid #1D2E58;border-radius:12px;padding:20px;margin-bottom:25px}
+.row{display:flex;justify-content:space-between;margin:8px 0}
+.row.total{margin-top:18px;font-size:16px}
+.pos{color:#4CAF50}.neg{color:#FF6B6B}
+.arrow{margin-right:4px}
+/* Forms */
+.form{display:flex;gap:10px;flex-wrap:wrap}
+.form input,.form select{padding:8px;border-radius:6px}
+.primary{background:#5696FF;border:none;padding:8px 16px;color:#fff;border-radius:6px;cursor:pointer}
+.table{width:100%;border-collapse:collapse;margin-top:12px}
+.table th,.table td{padding:8px;border-bottom:1px solid #1D2E58}
+footer{padding:20px;text-align:center;color:#9EB3D8}
+#toastStack{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:8px;z-index:9999}
+.toast{background:#0F1F3F;border:1px solid #21406f;color:#E2E9F5;padding:10px 14px;border-radius:10px;transition:all .2s ease}
+.toast.warn{border-color:#c99d2f}
+.toast.err{border-color:#cc5151}
