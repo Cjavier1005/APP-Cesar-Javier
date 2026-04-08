@@ -148,15 +148,15 @@ table th, table td { text-align: center !important; vertical-align: middle !impo
 <div id="toastStack"></div>
 
 <footer><small>Magico 10</small></footer>
-<script src="https://cdn.jsdelivr.net/npm/xlsx@0.19.3/dist/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <script src="./app.js"></script>
 <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js'))}</script>
+  
 <script type="module">
-  // 1. Importar Firebase
+
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
   import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-  // 2. Configuración de Firebase (PEGA AQUÍ TU firebaseConfig)
   const firebaseConfig = {
     apiKey: "AIzaSyCoG5rWxLAHTUPd2MNLFElmdkNfVtkO5aM",
     authDomain: "app-cesar-javier.firebaseapp.com",
@@ -166,13 +166,10 @@ table th, table td { text-align: center !important; vertical-align: middle !impo
     appId: "1:208616154969:web:f6fe488b6aeb2381d1ce48"
   };
 
-  // 3. Inicializar Firebase
   const app = initializeApp(firebaseConfig);
 
-  // 4. Inicializar Firestore
   const db = getFirestore(app);
 
-  // 5. Hacer db accesible desde otros scripts
   window.db = db;
 </script> 
 </body></html>
