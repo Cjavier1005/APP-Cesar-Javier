@@ -189,24 +189,3 @@ addEventListener('change',e=>{
  const t=e.target; const tipo=t.getAttribute('data-lock'); const mes=t.getAttribute('data-mes');
  if(tipo && mes){ state.bloqueosMeses[tipo][mes]=t.checked; save(); showToast(t.checked?'Mes bloqueado':'Mes desbloqueado','warn'); }
 });
-// === ANDROID BOTTOM NAV (INTEGRADO CON LOGICA EXISTENTE) ===
-window.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.bottom-nav button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const tab = btn.dataset.tab;
-
-      // crear un click falso que pase por el listener global
-      const fakeBtn = document.querySelector(`.tabs button[data-tab="${tab}"]`);
-      if (!fakeBtn) return;
-
-      const event = new MouseEvent('click', {
-        bubbles: true,
-        cancelable: true,
-        view: window
-      });
-
-      fakeBtn.dispatchEvent(event);
-    });
-  });
-});
-``
