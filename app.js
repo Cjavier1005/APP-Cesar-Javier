@@ -210,3 +210,53 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 ``
+/* ============================
+   ANDROID – RESUMEN CLÁSICO
+   ============================ */
+@media (max-width:768px){
+
+  /* Título más limpio */
+  #tab-resumen h2{
+    font-size:18px;
+    margin-bottom:12px;
+  }
+
+  /* Tarjeta principal (Banco) */
+  #bancoCard{
+    padding:18px;
+    border-radius:18px;
+    background:linear-gradient(180deg,#0F1F3F,#0B1A33);
+  }
+
+  /* Filas más grandes y legibles */
+  #bancoCard .row{
+    padding:10px 0;
+    font-size:15px;
+  }
+
+  /* Ocultar flechas (ruido visual) */
+  #bancoCard .arrow{
+    display:none;
+  }
+
+  /* Totales principales destacados */
+  #totalConSaldo,
+  #totalRecaudadoBanco{
+    display:block;
+    margin-top:10px;
+    font-size:22px;
+    font-weight:bold;
+    text-align:right;
+  }
+
+  /* Separar secciones */
+  #tab-resumen .card{
+    margin-bottom:16px;
+  }
+
+  /* Cumpleaños más tipo lista */
+  #cumplesMes li{
+    padding:10px;
+    border-bottom:1px solid #1D2E58;
+  }
+}
