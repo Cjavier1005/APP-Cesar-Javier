@@ -189,20 +189,3 @@ addEventListener('change',e=>{
  const t=e.target; const tipo=t.getAttribute('data-lock'); const mes=t.getAttribute('data-mes');
  if(tipo && mes){ state.bloqueosMeses[tipo][mes]=t.checked; save(); showToast(t.checked?'Mes bloqueado':'Mes desbloqueado','warn'); }
 });
-// === ANDROID BOTTOM NAV SUPPORT ===
-document.querySelectorAll('.bottom-nav button').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const tab = btn.dataset.tab;
-
-    document.querySelectorAll('.tabs button').forEach(b=>{
-      b.classList.toggle('active', b.dataset.tab === tab);
-    });
-
-    document.querySelectorAll('.tab').forEach(sec=>{
-      sec.classList.toggle('active', sec.id === 'tab-'+tab);
-    });
-
-    window.scrollTo(0,0);
-  });
-});
-``
