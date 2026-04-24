@@ -34,3 +34,30 @@ footer{padding:20px;text-align:center;color:#9EB3D8}
 /* === BLOQUEO POR MES === */
 .tr-lock th{background:#0D1A36;color:#9EB3D8;font-style:italic}
 input:disabled{opacity:.45;cursor:not-allowed}
+
+/* === ANDROID BOTTOM NAV === */
+.bottom-nav{
+  display:none;
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#0D1A36;
+  border-top:1px solid #1D2E58;
+  z-index:9999;
+}
+
+.bottom-nav button{
+  flex:1;
+  background:none;
+  border:none;
+  color:#9EB3D8;
+  padding:12px 0;
+  font-size:22px;
+}
+
+@media (max-width:768px){
+  .tabs{display:none;}
+  .bottom-nav{display:flex;}
+  main{padding-bottom:90px;}
+}
