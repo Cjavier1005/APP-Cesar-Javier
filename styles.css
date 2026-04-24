@@ -111,3 +111,58 @@ input:disabled{opacity:.45;cursor:not-allowed}
     border-bottom:1px solid #1D2E58;
   }
 }
+/* =====================================
+   ANDROID – SALDO PROTAGONISTA (OPCIÓN 1)
+   ===================================== */
+@media (max-width:768px){
+
+  /* Tarjeta Banco como bloque principal */
+  #bancoCard{
+    background:linear-gradient(180deg,#142a52,#0b1d3a);
+    border-radius:22px;
+    padding:22px 20px;
+    box-shadow:0 10px 24px rgba(0,0,0,.35);
+  }
+
+  /* Ocultar filas secundarias (menos ruido) */
+  #banRowReu,
+  #banRowMen,
+  #banRowExt,
+  #banRowDeu,
+  #banRowGas,
+  #banRowSal{
+    display:none;
+  }
+
+  /* SALDO TOTAL – protagonista */
+  #totalRecaudadoBanco{
+    display:block;
+    font-size:30px;
+    font-weight:700;
+    text-align:center;
+    margin:6px 0 12px;
+    color:#ffffff;
+  }
+
+  /* Texto aclaratorio */
+  #totalRecaudadoBanco::before{
+    content:"Saldo total";
+    display:block;
+    font-size:13px;
+    font-weight:500;
+    letter-spacing:.5px;
+    opacity:.75;
+    margin-bottom:4px;
+  }
+
+  /* Espacio entre tarjetas */
+  #tab-resumen .card{
+    margin-bottom:18px;
+  }
+
+  /* Cumpleaños como lista limpia */
+  #cumplesMes li{
+    padding:12px 10px;
+    border-bottom:1px solid #1D2E58;
+  }
+}
