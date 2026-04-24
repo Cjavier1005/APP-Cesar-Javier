@@ -189,3 +189,20 @@ addEventListener('change',e=>{
  const t=e.target; const tipo=t.getAttribute('data-lock'); const mes=t.getAttribute('data-mes');
  if(tipo && mes){ state.bloqueosMeses[tipo][mes]=t.checked; save(); showToast(t.checked?'Mes bloqueado':'Mes desbloqueado','warn'); }
 });
+// === ANDROID BOTTOM NAV (FINAL Y SEGURO) ===
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.bottom-nav button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab;
+
+      // buscar el botón original del tab
+      const originalTab = document.querySelector(
+        `.tabs button[data-tab="${tab}"]`
+      );
+
+      if (originalTab) {
+        originalTab.click(); // ← CLAVE
+      }
+    });
+  });
+});
