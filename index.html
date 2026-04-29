@@ -52,19 +52,36 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// ✅ ESPERAR CARGA COMPLETA (CLAVE)
+// ✅ ESPERAR TODO CARGADO
 window.addEventListener("load", () => {
 
-  // PERSONAS
-  document.getElementById("personaForm")?.addEventListener("submit", async () => {
-    await addDoc(collection(db, "personas"), {
-      nombre: personaNombre.value,
-      cedula: personaCedula.value,
-      cumple: personaCumple.value,
-      fecha: new Date()
-    });
-    console.log("✅ persona enviada");
+  // 🔥 PERSONAS (CONTROLADO CORRECTAMENTE)
+  const personaForm = document.getElementById("personaForm");
+
+  personaForm?.addEventListener("submit", function () {
+
+    setTimeout(async () => {
+
+      try {
+        await addDoc(collection(db, "personas"), {
+          nombre: document.getElementById("personaNombre").value,
+          cedula: document.getElementById("personaCedula").value,
+          cumple: document.getElementById("personaCumple").value,
+          fecha: new Date()
+        });
+
+        console.log("✅ Persona guardada Firebase");
+
+      } catch (e) {
+        console.error("🔥 ERROR Firebase:", e);
+      }
+
+    }, 300); // 🔥 este delay es clave
+
   });
+
+});
+</script>
 
   // FAMILIAS
   document.getElementById("familiaForm")?.addEventListener("submit", async () => {
