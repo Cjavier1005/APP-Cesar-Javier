@@ -160,4 +160,130 @@ table th, table td { text-align: center !important; vertical-align: middle !impo
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.19.3/dist/xlsx.full.min.js"></script>
 <script src="./app.js"></script>
 <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js'))}</script>
+  <script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCGiJkznNQhg83xnqy5_-k7snCBGPsVWzM",
+  authDomain: "app-cesar-javier-93a62.firebaseapp.com",
+  projectId: "app-cesar-javier-93a62",
+  storageBucket: "app-cesar-javier-93a62.firebasestorage.app",
+  messagingSenderId: "720388426649",
+  appId: "1:720388426649:web:4f1e70f99992268a966108"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// ===========================
+// ✅ PERSONAS
+// ===========================
+document.getElementById("personaForm")?.addEventListener("submit", async e => {
+  e.preventDefault();
+
+  await addDoc(collection(db, "personas"), {
+    nombre: personaNombre.value,
+    cedula: personaCedula.value,
+    cumple: personaCumple.value,
+    fecha: new Date()
+  });
+
+  alert("✅ Persona guardada");
+});
+
+// ===========================
+// ✅ FAMILIAS
+// ===========================
+document.getElementById("familiaForm")?.addEventListener("submit", async e => {
+  e.preventDefault();
+
+  await addDoc(collection(db, "familias"), {
+    nombre: familiaNombre.value,
+    fecha: new Date()
+  });
+
+  alert("✅ Familia guardada");
+});
+
+// ===========================
+// ✅ REUNIONES
+// ===========================
+document.getElementById("reunionForm")?.addEventListener("submit", async e => {
+  e.preventDefault();
+
+  await addDoc(collection(db, "reuniones"), {
+    persona: reunionPersona.value,
+    mes: reunionMes.value,
+    valor: parseFloat(reunionValor.value),
+    fecha: new Date()
+  });
+
+  alert("✅ Reunión registrada");
+});
+
+// ===========================
+// ✅ MENSUALIDADES
+// ===========================
+document.getElementById("mensualForm")?.addEventListener("submit", async e => {
+  e.preventDefault();
+
+  await addDoc(collection(db, "mensualidades"), {
+    familia: mensualFamilia.value,
+    mes: mensualMes.value,
+    valor: parseFloat(mensualValor.value),
+    fecha: new Date()
+  });
+
+  alert("✅ Mensualidad registrada");
+});
+
+// ===========================
+// ✅ DEUDAS
+// ===========================
+document.getElementById("deudaForm")?.addEventListener("submit", async e => {
+  e.preventDefault();
+
+  await addDoc(collection(db, "deudas"), {
+    fecha: deudaFecha.value,
+    nombre: deudaNombre.value,
+    valor: parseFloat(deudaValor.value)
+  });
+
+  alert("✅ Deuda guardada");
+});
+
+// ===========================
+// ✅ GASTOS
+// ===========================
+document.getElementById("gastoForm")?.addEventListener("submit", async e => {
+  e.preventDefault();
+
+  await addDoc(collection(db, "gastos"), {
+    fecha: gastoFecha.value,
+    nombre: gastoNombre.value,
+    valor: parseFloat(gastoValor.value)
+  });
+
+  alert("✅ Gasto guardado");
+});
+
+// ===========================
+// ✅ EXTRAS
+// ===========================
+document.getElementById("extraForm")?.addEventListener("submit", async e => {
+  e.preventDefault();
+
+  await addDoc(collection(db, "extras"), {
+    detalle: extraInvitado.value,
+    valor: parseFloat(extraValor.value),
+    fecha: new Date()
+  });
+
+  alert("✅ Extra registrado");
+});
+
+</script>
+``
 </body></html>
