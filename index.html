@@ -76,3 +76,80 @@ document.getElementById("personaForm")?.addEventListener("submit", () => {
     await addDoc(collection(db, "personas"), {
       nombre: personaNombre.value,
       cedula: personaCedula.value,
+      cumple: personaCumple.value,
+      fecha: new Date()
+    });
+  }, 200);
+});
+
+// ✅ FAMILIAS
+document.getElementById("familiaForm")?.addEventListener("submit", () => {
+  setTimeout(async () => {
+    await addDoc(collection(db, "familias"), {
+      nombre: familiaNombre.value,
+      fecha: new Date()
+    });
+  }, 200);
+});
+
+// ✅ REUNIONES
+document.getElementById("reunionForm")?.addEventListener("submit", () => {
+  setTimeout(async () => {
+    await addDoc(collection(db, "reuniones"), {
+      persona: reunionPersona.value,
+      mes: reunionMes.value,
+      valor: parseFloat(reunionValor.value),
+      fecha: new Date()
+    });
+  }, 200);
+});
+
+// ✅ MENSUALIDADES
+document.getElementById("mensualForm")?.addEventListener("submit", () => {
+  setTimeout(async () => {
+    await addDoc(collection(db, "mensualidades"), {
+      familia: mensualFamilia.value,
+      mes: mensualMes.value,
+      valor: parseFloat(mensualValor.value),
+      fecha: new Date()
+    });
+  }, 200);
+});
+
+// ✅ DEUDAS
+document.getElementById("deudaForm")?.addEventListener("submit", () => {
+  setTimeout(async () => {
+    await addDoc(collection(db, "deudas"), {
+      fecha: deudaFecha.value,
+      nombre: deudaNombre.value,
+      valor: parseFloat(deudaValor.value)
+    });
+  }, 200);
+});
+
+// ✅ GASTOS
+document.getElementById("gastoForm")?.addEventListener("submit", () => {
+  setTimeout(async () => {
+    await addDoc(collection(db, "gastos"), {
+      fecha: gastoFecha.value,
+      nombre: gastoNombre.value,
+      valor: parseFloat(gastoValor.value)
+    });
+  }, 200);
+});
+
+// ✅ EXTRAS
+document.getElementById("extraForm")?.addEventListener("submit", () => {
+  setTimeout(async () => {
+    await addDoc(collection(db, "extras"), {
+      detalle: extraInvitado.value,
+      valor: parseFloat(extraValor.value),
+      fecha: new Date()
+    });
+  }, 200);
+});
+
+</script>
+
+</body>
+</html>
